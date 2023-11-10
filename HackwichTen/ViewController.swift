@@ -6,14 +6,30 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class ViewController: UIViewController {
-
+   
+let initialLocation = CLLocation(latitude: 21.384014, longitude: -158.039621)
+    
+let regionRadius: CLLocationDistance = 10000
+    
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+        centerMapOnLocation(location: initialLocation)
+        
+        func centerMapOnLocation(location: CLLocation) {
+               let coordinateRegion = MKCoordinateRegion(
+                   center: location.coordinate,
+                   latitudinalMeters: regionRadius,
+                   longitudinalMeters: regionRadius
+               )
+               mapView.setRegion(coordinateRegion, animated: true)
+           }
+        let restaurantOne = Restaurant(title: "Hanara's", type: "Waianae", coordinate:CLLocationCoordinate2D(latitude: -158.184921, longitude: 2007723732))
+        mapView.addAnnotation(restaurantOne)
+                                    
 }
-
+}
