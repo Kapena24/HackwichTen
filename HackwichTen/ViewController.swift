@@ -19,6 +19,9 @@ let regionRadius: CLLocationDistance = 10000
     override func viewDidLoad() {
         super.viewDidLoad()
         centerMapOnLocation(location: initialLocation)
+       
+        let restaurantOne = Restaurant (title: "Kalapawai", type: "American", coordinate:CLLocationCoordinate2D(latitude: 21.346470, longitude: -158.080098))
+        mapView.addAnnotation(restaurantOne)
         
         func centerMapOnLocation(location: CLLocation) {
                let coordinateRegion = MKCoordinateRegion(
@@ -28,8 +31,6 @@ let regionRadius: CLLocationDistance = 10000
                )
                mapView.setRegion(coordinateRegion, animated: true)
            }
-        let restaurantOne = Restaurant (title: "Kalapawai", type: "American", coordinate:CLLocationCoordinate2D(latitude: 21.346470, longitude: -158.080098))
-        mapView.addAnnotation(restaurantOne)
                                     
 }
 }
