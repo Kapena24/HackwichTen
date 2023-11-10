@@ -28,7 +28,7 @@ let regionRadius: CLLocationDistance = 10000
                )
                mapView.setRegion(coordinateRegion, animated: true)
            }
-        let restaurantOne = Restaurant(title: "Hanara's", type: "Waianae", coordinate:CLLocationCoordinate2D(latitude: -158.184921, longitude: 2007723732))
+        let restaurantOne = Restaurant (title: "Kalapawai", type: "American", coordinate:CLLocationCoordinate2D(latitude: 21.346470, longitude: -158.080098))
         mapView.addAnnotation(restaurantOne)
                                     
 }
